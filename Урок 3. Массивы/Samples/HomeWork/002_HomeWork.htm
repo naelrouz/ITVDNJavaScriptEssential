@@ -4,9 +4,62 @@
 <head>
     <title></title>
     
-    <script type="text/javascript">
-        
-      
+    <script type="text/javascript"> 'use strict'
+
+    function hr(){
+        document.write('<hr>' );
+    }
+
+    /* Создать массив размерностью N элементов,
+    заполнить его произвольными целыми значениями. */
+
+       // var N = parseInt(prompt('Введите размер массива = ', '10'));
+        var N = 4;
+        var arr = new Array(N);
+        var min = 1, max = 10;
+        for(var i = 0; i <= N-1; i++ )
+        {
+            arr[i] = Math.floor(Math.random() * (max - min) + min);
+
+        }
+        document.write('<br>Исходный массив: ' + arr.join(' | ') + '<br>' );
+        hr();
+
+    /* Вывести наибольшее значение массива,
+    наименьшее значение массива */
+
+        var arrSort = arr.sort();
+        var minValue = arrSort[1];
+        var arrLength = arr.length; // получаем и присваеваем длинну длинну массива
+        var maxValue = arrSort[arrLength-1];
+
+        document.write('<br> Наименьшее значение массива: ' + minValue );
+        document.write('<br> Наибольшее значение массива: ' + maxValue );
+        hr();
+
+    /* Вывести общую сумму элементов и среднее арифметическое*/
+        var arrSum = 0;
+        var j = 0;
+        var arrNC = new Array()
+        arr.forEach(function(item, i, arr) {
+            arrSum += item;
+            if(item%2){
+                arrNC[j] = item;
+                j++;
+            }
+
+        });
+
+        document.write('<br> Сума элементов массива: ' + arrSum );
+        document.write('<br> Cреднее арифметическое: ' + arrSum/arrLength );
+        hr();
+
+    /* Вывести все не четные*/
+    document.write('<br>Массив из не четных элементов исходного: ' + arrNC.join(' | ') + '<br>' );
+    hr();
+
+
+
     </script>
 
 </head>

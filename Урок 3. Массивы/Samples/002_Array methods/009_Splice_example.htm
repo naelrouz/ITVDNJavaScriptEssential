@@ -10,12 +10,15 @@
 
     <script type="text/javascript">
 
-        var Students = ["Алексей", "Владимир", "Александр", "Владислав", "Елена", "Руслан", "Анна", "Киррил", "Ольга", "Валентин", "Андрей"];
+        var Students = [
+            "Алексей", "Владимир", "Александр",
+            "Владислав", "Елена", "Руслан",
+            "Анна", "Киррил", "Ольга", "Валентин", "Андрей"];
 
         var from = prompt("Введите индекс человека с которого начать выборку:");
         var count = prompt("Введите количество человек:");
 
-        var res = Students.splice(from, count);
+        var res = Students.splice(from-1, count);
 
         document.write(res.join("<p>"));
 
